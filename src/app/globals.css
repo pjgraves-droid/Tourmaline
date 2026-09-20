@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap");
+@import "tailwindcss";
+
+:root { --cream: #f6f3eb; --sand: #e6dfce; --sage: #c7d4c5; --forest: #203d31; --ink: #1f2a24; --terracotta: #b86f51; --background: var(--cream); --foreground: var(--ink); }
+@theme inline { --color-cream: var(--cream); --color-sand: var(--sand); --color-sage: var(--sage); --color-forest: var(--forest); --color-ink: var(--ink); --color-terracotta: var(--terracotta); --font-sans: "DM Sans", sans-serif; --font-display: "Playfair Display", serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+.eyebrow { color: var(--terracotta); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.section-title { color: var(--forest); font-family: "Playfair Display", serif; font-size: 2.25rem; line-height: 1.1; margin-top: .45rem; }
+::selection { background: var(--sage); color: var(--forest); }

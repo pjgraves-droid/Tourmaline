@@ -1,0 +1,34 @@
+{
+  "property": {
+    "id": "property-123",
+    "name": "Tourmaline House",
+    "public_name": "Tourmaline House · Pearl Beach",
+    "address": {
+      "city": "Pearl Beach",
+      "state": "NSW",
+      "country": "Australia",
+      "coordinates": { "latitude": "-33.545", "longitude": "151.305" },
+      "display": "Pearl Beach, NSW, Australia"
+    },
+    "currency": "AUD",
+    "summary": "A restorative beach retreat.",
+    "description": "A full description.",
+    "check-in": "15:00",
+    "check-out": "11:00",
+    "amenities": ["Pool", "Sauna"],
+    "capacity": { "max": 10, "bedrooms": 5, "beds": 8, "bathrooms": 3 },
+    "house_rules": { "pets_allowed": true, "smoking_allowed": false, "events_allowed": false }
+  },
+  "calendar": {
+    "days": [
+      {
+        "date": "2026-12-01",
+        "min_stay": 3,
+        "closed_for_checkin": false,
+        "closed_for_checkout": false,
+        "status": { "available": true, "reason": null },
+        "price": { "amount": 180000, "currency": "AUD" }
+      }
+    ]
+  }
+}
