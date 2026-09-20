@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Booking {
+  id              String   @id @default(cuid())
+  checkIn         DateTime
+  checkOut        DateTime
+  guests          Int
+  name            String
+  email           String
+  phone           String
+  message         String?
+  totalCents      Int
+  status          String   @default("pending")
+  stripeSessionId String?  @unique
+  hospitableReservationId String?
+  hospitableSyncError String?
+  createdAt       DateTime @default(now())
+
+  @@index([checkIn, checkOut])
+  @@index([status])
+}
+
+model BlockedDate {
+  id      String   @id @default(cuid())
+  start   DateTime
+  end     DateTime
+  source  String
+  uid     String?
+  summary String?
+
+  @@index([start, end])
+  @@index([source])
+}
+
+model Setting {
+  key   String @id
+  value String
+}
+
+model HospitablePropertyCache {
+  id       String   @id
+  json     String
+  syncedAt DateTime
+}
+
+model CalendarDay {
+  date              String   @id
+  available         Boolean
+  priceCents        Int
+  currency          String
+  minStay           Int
+  closedForCheckin  Boolean
+  closedForCheckout Boolean
+  reason            String?
+}
+
+model HospitableImage {
+  id           Int    @id @default(autoincrement())
+  url          String
+  thumbnailUrl String
+  caption      String?
+  order        Int
+}
